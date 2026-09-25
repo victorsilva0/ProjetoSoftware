@@ -1,20 +1,33 @@
 package entidades;
 
 public class Ebook extends ItemBiblioteca {
-    private double tamanhoArquivo;
+    private double tamanhoArquivoMb;
 
 
-    public Ebook(String titulo, String autor, int anoPublicacao, double tamanhoArquivo) {
+    //Construtor
+    public Ebook(String titulo, String autor, int anoPublicacao, double tamanhoArquivoMb) {
         super(titulo, autor, anoPublicacao);
-        this.tamanhoArquivo = tamanhoArquivo;
+        this.tamanhoArquivoMb = tamanhoArquivoMb;
     }
 
 
-    public double getTamanhoArquivo() {
-        return tamanhoArquivo;
+    //Getters e Setters
+    public double getTamanhoArquivoMb() {
+        return tamanhoArquivoMb;
     }
 
-    public void setTamanhoArquivo(double tamanhoArquivo) {
-        this.tamanhoArquivo = tamanhoArquivo;
+    public void setTamanhoArquivoMb(double tamanhoArquivoMb) {
+        this.tamanhoArquivoMb = tamanhoArquivoMb;
+    }
+
+
+    //Métodos
+    @Override
+    public void exibirInformacoes() {
+        System.out.println("Tipo: Ebook");
+        System.out.println("Título: " + getTitulo());
+        System.out.println("Autor: " + getAutor());
+        System.out.println("Ano da Publicação: " + getAnoPublicacao());
+        System.out.println("Tamanho do arquivo: " + tamanhoArquivoMb + "MB");
     }
 }

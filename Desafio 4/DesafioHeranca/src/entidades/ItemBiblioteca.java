@@ -1,11 +1,12 @@
 package entidades;
 
-abstract class ItemBiblioteca {
+public abstract class ItemBiblioteca {
     private String titulo;
     private String autor;
     private int anoPublicacao;
 
 
+    //Construtor
     public ItemBiblioteca(String titulo, String autor, int anoPublicacao) {
         this.titulo = titulo;
         this.autor = autor;
@@ -13,6 +14,7 @@ abstract class ItemBiblioteca {
     }
 
 
+    //Getters e Setters
     public String getTitulo() {
         return titulo;
     }
@@ -38,10 +40,6 @@ abstract class ItemBiblioteca {
     }
 
 
-    @Override
-    public String toString() {
-        return "Titulo: " + titulo +
-                "\nAutor: " + autor +
-                "\nAnoPublicacao: " + anoPublicacao;
-    }
+    //Métodos
+    public abstract void exibirInformacoes();
 }
