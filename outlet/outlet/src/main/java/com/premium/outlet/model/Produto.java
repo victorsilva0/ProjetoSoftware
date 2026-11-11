@@ -1,5 +1,6 @@
 package com.premium.outlet.model;
 
+import com.premium.outlet.dto.AtualizadasDadosRoupa;
 import com.premium.outlet.dto.DadosCadastrarRoupa;
 import com.premium.outlet.enums.Tamanho;
 import jakarta.persistence.*;
@@ -33,4 +34,27 @@ public class Produto {
         this.quantidade = roupa.quantidade();
         this.valor = roupa.valor();
     }
+
+    public void atualizarInformacoes(AtualizadasDadosRoupa dadosRoupa) {
+        if (dadosRoupa.tipo() != null && !dadosRoupa.tipo().isEmpty()) {
+        this.tipo = dadosRoupa.tipo();
+        }
+
+        if (dadosRoupa.marca() != null && !dadosRoupa.marca().isEmpty()) {
+            this.marca = dadosRoupa.marca();
+        }
+
+        if (dadosRoupa.tamanho() != null) {
+            this.tamanho = dadosRoupa.tamanho();
+        }
+
+        if (dadosRoupa.quantidade() >=0) {
+            this.quantidade = dadosRoupa.quantidade();
+        }
+
+        if (dadosRoupa.valor() >=0) {
+            this.valor = dadosRoupa.valor();
+        }
+    }
+
 }
